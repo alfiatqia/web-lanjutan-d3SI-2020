@@ -7,16 +7,10 @@
  {
 
  	
- 	public function index ($url_nim, $url_jur)
+ 	public function index ()
  	{
- 		# code...
- 		$data ['nama']= 'Alfi atqia';
- 		$data ['umur']= '21';
- 		$data ['nim']= $url_nim;
- 		$data ['jurusan']= $url_jur;
 
-
- 		$this->load->view('mahasiswa/V_index',$data); 
+ 		$this->load->view('mahasiswa/V_index'); 
  	}
 
  	public function jurusan ()
