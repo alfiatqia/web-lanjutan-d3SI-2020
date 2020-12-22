@@ -30,7 +30,7 @@ class m_mahasiswa extends CI_model
 		return $this->db->get_where($this->tabel, ['NIM' => $input_NIM])->row_object();
 	}
 
-	function update_data($where,$data,$tabel){
+	function update($where,$data,$tabel){
 		$this->db->where($where);
 		$this->db->update($tabel,$data);
 

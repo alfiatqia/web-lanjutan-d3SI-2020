@@ -15,7 +15,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="<?= site_url('mahasiswa/index')?>">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?= site_url('Acontroller/index')?>">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Tambah data</a>
@@ -33,7 +33,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <form action="<?= site_url('mahasiswa/simpan_edit')?>" method="post">
+        <form action="<?= site_url('mahasiswa/update')?>" method="post">
           <div class="form-group">
               <label>NIM</label>
               <input type="text" readonly value="<?=$data_NIM->NIM?>" name="NIM" class="form-control">

@@ -50,7 +50,6 @@
 
  	$this->m_mahasiswa->create($data);
  	redirect('mahasiswa/index','refresh');
- 	print_r($data);
 
  	}
 
@@ -68,7 +67,7 @@
  		return $this->load->view('mahasiswa/v_edit', $data);
  	}
 
-    public function simpan_edit ()
+    public function update ()
     {
         $NIM = $this->input->post('NIM');
         $NAMA = $this->input->post('NAMA');
@@ -77,13 +76,14 @@
     $data  = array(
         'NIM' => $NIM,
         'NAMA' => $NAMA,
-        'ALAMAT' => $ALAMAT
+        'ALAMAT' => $ALAMAT,
         );
 
     $where = array(
         'NIM' => $NIM 
          );
+
+    $this->m_mahasiswa->update($where,$data, 'mahasiswa');
+    redirect('mahasiswa/index');
     }
  }
-
-?>
