@@ -11,6 +11,10 @@
  		parent::__construct();
 
  		$this->load->model('m_mahasiswa');
+
+        if (!$this->session->userdata('nama_pengguna')){
+            redirect('login/index');
+        }
  	}
 
  	
@@ -22,8 +26,10 @@
  		$data['jurusan'] =$url_jur;
 
  		$data['tbl_mahasiswa'] = $this->m_mahasiswa->getAll();
- 		$this->load->view('mahasiswa/V_index', $data);
- 	}
+    
+ 		$this->load->view('template/header');
+        $this->load->view('mahasiswa/v_index', $data);
+    }    
 
  	public function jurusan ()
  	{
@@ -33,6 +39,7 @@
  	public function tambah ()
  	{
 
+    $this->load->view('template/header');
  	$this->load->view('mahasiswa/V_tambah');
 	}
 

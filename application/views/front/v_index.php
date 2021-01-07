@@ -1,4 +1,13 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DATA MAHASISWA</title>
+  <link rel="stylesheet" 
+      href="<?= base_url('assets/bootstrap/css/bootstrap.min.css')?>">
+</head>
+<body>
+  
 <div class="alert alert-info" role="alert" align="center">
   ALFI ATQIA / 1901050002!
 </div>
@@ -28,7 +37,7 @@
       <td><?= $key->ALAMAT ?></td>
       <td class="text-center">
 
-        <?php if ($this->session->userdata('hak_pengguna')== 'admin') { ?>
+        <?php if ($this->session->userdata('hak_akses')== 'admin') { ?>
   
 
           <a href="<?=site_url('mahasiswa/hapus/' . $key->NIM)?>" 
